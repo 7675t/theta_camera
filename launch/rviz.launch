@@ -1,0 +1,6 @@
+<launch>
+  <node name="face_tf_publisher" pkg="tf" type="static_transform_publisher" args="0 0 1 0 0 -1.57 map face_frame 10"/>
+  <node name="rear_tf_publisher" pkg="tf" type="static_transform_publisher" args="0 0 1 0 0  1.57 map rear_frame 10"/>
+  <node ns="theta" name="stereograph_pointcloud" pkg="theta_camera" type="stereograph_pointcloud.py"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find theta_camera)/launch/pointcloud.rviz"/>
+</launch>

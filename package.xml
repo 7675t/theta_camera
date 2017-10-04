@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <name>theta_camera</name>
+  <version>0.0.0</version>
+  <description>The theta_camera package</description>
+  <maintainer email="ryosuke.tajima@opensource-robotics.tokyo.jp">Ryosuke Tajima</maintainer>
+  <license>Apache</license>
+  <url type="website">http://wiki.ros.org/theta_camera</url>
+  <author email="ryosuke.tajima@opensource-robotics.tokyo.jp">Ryosuke Tajima</author>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>gscam</run_depend>
+  <export>
+  </export>
+</package>

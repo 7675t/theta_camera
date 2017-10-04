@@ -1,0 +1,16 @@
+<launch>
+  <arg name="camera_name" default="theta"/>
+  <arg name="device" default="/dev/video0"/>
+
+  <group ns="$(arg camera_name)">
+    <!-- nodelet manager for Theta's image processing -->
+    <node pkg="nodelet" type="nodelet" name="manager" args="manager"/>
+    <!-- Launch gscam driver -->
+    <node name="gscam" pkg="nodelet" type="nodelet" args="load gscam/GSCamNodelet manager">
+      <param name="gscam_config" value="v4l2src device=$(arg device) ! video/x-raw-yuv ! ffmpegcolorspace"/>
+      <param name="frame_id" value="theta"/>
+      <param name="sync_sink" value="true"/>
+      <remap from="$(arg camera_name)/camera/image_raw" to="$(arg camera_name)/image_raw"/>
+    </node>
+  </group>
+</launch>
